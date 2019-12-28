@@ -11,7 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class TaskForm {
 
-    @Digits(integer = 1, fraction = 0)
+    @Digits(integer = 1, fraction = 0)  // 一桁の整数、小数桁数はゼロ(つまり整数)
     private int typeId;
 
     @NotNull (message = "タイトルを入力してください。")
@@ -22,11 +22,11 @@ public class TaskForm {
     private String detail;
 
     @NotNull (message = "期限を設定してください。")
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") // このフォーマットでないと、HTMLで受け取れない
     @Future (message = "期限が過去に設定されています。")
     private LocalDateTime deadline;
 
-    public boolean isNewTask;
+    public boolean isNewTask; // タスクが新規orデータベースからを更新するものなのか
     
     public TaskForm() {}
 

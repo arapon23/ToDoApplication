@@ -7,7 +7,7 @@ public class Task {
     private int id;
     private int userId;
     private int typeId;
-    private TaskType taskType;
+    private TaskType taskType; // 自作したオブジェクトをフィールドとして持たせ、TaskにTaskTypeを結合する
     private String title;
     private String detail;
     private LocalDateTime deadline;
@@ -54,6 +54,5 @@ public class Task {
 	public void setDeadline(LocalDateTime deadline) {
 		this.deadline = deadline;
 	}
-    
     
 }

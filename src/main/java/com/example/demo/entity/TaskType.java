@@ -25,5 +25,4 @@ public class TaskType {
 		this.comment = comment;
 	}
     
-    
 }
